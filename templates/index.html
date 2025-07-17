@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Message Repeater</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Message Repeater</h1>
+        <form method="POST">
+            <label for="message">Enter Message:</label>
+            <input type="text" id="message" name="message" required>
+
+            <label for="count">How many times?</label>
+            <input type="number" id="count" name="count" min="1" max="1000" required>
+
+            <button type="submit">Repeat</button>
+        </form>
+
+        {% if output %}
+            <h2>Output:</h2>
+            <textarea rows="10" cols="50" readonly>{{ output }}</textarea>
+        {% endif %}
+    </div>
+</body>
+</html>
